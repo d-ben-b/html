@@ -321,7 +321,7 @@ h4{
     text-decoration: none;
     color: rgb(95, 95, 95) !important;
     text-align: center;
-    margin-top: 16px;
+    margin: 16px;
     z-index: 9;
 }
 
@@ -350,12 +350,6 @@ h4{
     grid-column: 29;
 }
 
-.active,
-.dot:hover {
-  background: rgba(255, 255, 255, 0.9);
-  cursor: pointer;
-}
-
 .fades {
   animation: 1.5s fades;
 }
@@ -380,6 +374,14 @@ h4{
     overflow: hidden;
 }
 
+.show{
+    display: block !important;
+}
+
+.initial{
+    background:"rgba(255, 255, 255, 0.9)";
+}
+
 /**hover**/
 .submit_button:hover{
     cursor: pointer;
@@ -398,28 +400,13 @@ h4{
     transition: 0.8s;
 }
 
+.active,
+.dot:hover {
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
 
-
-/* *eye**/
-  /* .eye {
-    position: relative;
-    bottom: -639px;
-    left: 19px;
-    display: inline-block;
-    border-radius: 50%; 
-    height: 30px;
-    width: 30px;
-    background: #CCC;
-    z-index: 9;
-  }
-  .eye:after {
-    position: absolute;
-    bottom: 17px;
-    right: 10px;
-    width: 10px;
-    height: 10px;
-    background: #000;
-    border-radius: 50%;
-    content: " ";
-  } */
-/**eye* */
+.slide__arraw:hover{
+    color: #123cd3 !important;
+    cursor: pointer;
+}

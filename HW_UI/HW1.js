@@ -1,7 +1,10 @@
 
 var _isopen = new Boolean(false);
 _isopen = false;
-let slideIndex = 1;
+let slideIndex = 0;
+let slides = document.getElementsByClassName("Image");
+let dots = document.getElementsByClassName("dot");
+
 
 $('.sign_in').click(function(){
     $('.sign_in_panel').transition('scale');
@@ -77,81 +80,61 @@ window.addEventListener("mousemove", (e) => {
   });
 });
 /**eye move**/ 
-
-/**slide**/
-// window.onload = function () {
-//   let slideIndex = 1;
-//   showSlide(slideIndex);
-
-//   let prev = document.getElementById("prev");
-//   prev.addEventListener("click", divideSlides, false);
-
-//   let next = document.getElementById("next");
-//   next.addEventListener("click", plusSlides, false);
-
-//   const selectdot = document.querySelectorAll(".dot");
-//   for (let i = 0; i < selectdot.length; i++) {
-//     selectdot[i].addEventListener("click", function (e) {
-//       showSlide((slideIndex = i + 1));
-//     });
-//   }
-
-//   function plusSlides() {
-//     showSlide((slideIndex += 1));
-//   }
-
-//   function divideSlides() {
-//     showSlide((slideIndex -= 1));
-//   }
-
-//   function showSlide(num) {
-//     let slides = document.getElementsByClassName("slide__item");
-//     let dots = document.getElementsByClassName("dot");
-//     if (num > slides.length) {
-//       slideIndex = 1;
-//     }
-
-//     if (num < 1) {
-//       slideIndex = slides.length;
-//     }
-//     for (let i = 0; i < slides.length; i++) {
-//       slides[i].style.display = "none";
-//     }
-//     for (let i = 0; i < dots.length; i++) {
-//       dots[i].className = dots[i].className.replace("active", "");
-//     }
-
-//     slides[slideIndex - 1].style.display = "block";
-//     dots[slideIndex - 1].className += "active";
-//   }
-// };
-
-$('.slide__arraw').click(function(){
-  console.log("HI")
-  showSlide(slideIndex);
-
-  function showSlide(num){
-    let slides = document.getElementsByClassName("Image");
-    slides[num].style.display = "block";
-    let dots = document.getElementsByClassName("dot");
-    dots[num].style.background = "rgba(255, 255, 255, 0.9)";
-
-    if(slideIndex < 5){
-      slideIndex++;
-    }
-    else{
-      slideIndex=1
-    }
-
-    if(num==1){
-      slides[5].style.display = "none";
-      dots[5].style.background = rgba(255, 255, 255, 0.9);
-    }
-    else{
-      slides[num-1].style.display = "none";
-      $('dots[num-1]').transition('scale');
-    }
-
-    console.log("slideIndex=" + slideIndex)
-  } 
+/**slide */
+$('.slide__arraw--next').click(function(){
+  console.log("Now slide=" + slides[0])
+  showSlide(slideIndex + 1);
+  hideslide(slideIndex)
+  slideIndex = add(slideIndex,1)
+  console.log("Now=" + slideIndex)
 })
+
+$('.slide__arraw--prev').click(function(){
+  console.log("Now slide=" + slideIndex)
+  showSlide(slideIndex - 1);
+  hideslide(slideIndex)
+  slideIndex = add(slideIndex,-1)
+})
+
+$('.back').click(function(){
+  console.log("Now slide=" + slideIndex)
+  showSlide(slideIndex - 1);
+  hideslide(slideIndex)
+  slideIndex = add(slideIndex,-1)
+})
+
+function showSlide(num){
+  if (num == 6) {
+    num = 0;
+  }
+  else if(num == -1){
+    num = 5;
+  }
+  dots[num].className += " active";
+  //slides[num].style.display = "block";
+  $(slides[num]).transition({
+    animation : 'fade right',
+    duration  : 900
+  });
+}
+
+function hideslide(num){
+  //slides[num].style.display = "none";
+  $(slides[num]).transition({
+    animation : 'fade right',
+    duration  : 900
+  });
+  dots[num].className = dots[num].className.replace("active", "");
+}
+
+function add(num,add){
+  if(num + add > 5){
+    return 0;
+  }
+  else if(num + add < 0){
+    return 5;
+  }
+  else{
+    return num + add;
+  }
+}
