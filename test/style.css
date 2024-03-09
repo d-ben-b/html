@@ -1,0 +1,37 @@
+.container {
+  width: 100%;
+  border-radius: 5px;
+  border: solid 10px #dfe2e5;
+}
+
+.image {
+  width: 33.3%;
+  color: #0366d6;
+}
+
+.commit {
+  width: 33.3%;
+  flex-grow: 1;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.row:first-child {
+  background-color: #f1f8ff;
+}
+.row + .row {
+  border-top: solid 1px #dfe2e5;
+}
+.row .folder {
+  fill: rgba(3, 46, 97, 0.5);
+}
+.row .file {
+  fill: #24292e;
+}
