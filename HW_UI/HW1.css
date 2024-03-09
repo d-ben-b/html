@@ -105,6 +105,7 @@ h3{
     z-index:0;
     width: 80%;
     height: 730px;
+    display: none;
 }
 
 #back{
@@ -287,6 +288,98 @@ h4{
     left: 10px;
 }
 
+.dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.3);
+}
+
+.slide__dot {
+    padding: 5px 5px;
+    display: flex;
+    position: relative;
+    bottom: 827px;
+    left: 733px;
+    width: 136px;
+    transform: translateX(-50%);
+}
+
+.side_control{
+    display: grid;
+    grid-template-columns: repeat(30, 50px);
+    grid-template-rows: repeat(30, 50px);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.slide__arraw {
+    line-height: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(95, 95, 95) !important;
+    text-align: center;
+    margin-top: 16px;
+    z-index: 9;
+}
+
+.slide__arraw--prev {
+    position: relative;
+    grid-column: 2;
+    grid-row: 9;
+}
+.slide__arraw--next {
+    position: relative;
+    grid-column: 29;
+    grid-row: 9;
+}
+
+.back{
+    grid-column: 2;
+    grid-row: 9;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.right{
+    grid-column: 29;
+}
+
+.active,
+.dot:hover {
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+
+.fades {
+  animation: 1.5s fades;
+}
+@keyframes fades {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slideshow {
+    position: relative;
+    transition: 2s;
+    user-select: none;
+}
+  
+.slide__item {
+    /* display: none; */
+    position: relative;
+    overflow: hidden;
+}
+
 /**hover**/
 .submit_button:hover{
     cursor: pointer;
@@ -299,6 +392,13 @@ h4{
 .sign_in_block:hover{
     cursor: pointer;
 }
+
+ #IMG_5:hover{
+    transform: scale(1.05);
+    transition: 0.8s;
+}
+
+
 
 /* *eye**/
   /* .eye {
