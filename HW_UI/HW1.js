@@ -1,4 +1,3 @@
-
 var _isopen = new Boolean(false);
 _isopen = false;
 let slideIndex = 0;

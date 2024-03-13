@@ -110,7 +110,7 @@ h3{
 
 #back{
     position: absolute;
-    background-size: cover;
+    /* background-size: auto; */
     background-position: center center;
     z-index:-1;
     width: 100%;
@@ -253,6 +253,7 @@ h4{
 
 .page{
     display: block;
+    margin-bottom: 0%;
 }
 
 .fixed{
@@ -301,17 +302,18 @@ h4{
 .slide__dot {
     padding: 5px 5px;
     display: flex;
-    position: relative;
-    bottom: 827px;
-    left: 733px;
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
     width: 136px;
     transform: translateX(-50%);
+    z-index: 5;
 }
 
 .side_control{
     display: grid;
     grid-template-columns: repeat(30, 50px);
-    grid-template-rows: repeat(30, 50px);
+    grid-template-rows: repeat(15, 50px);
     grid-auto-rows: minmax(100px, auto);
 }
 
@@ -382,6 +384,19 @@ h4{
     background:"rgba(255, 255, 255, 0.9)";
 }
 
+.page2_title{
+    position: relative;
+    top: 15px;
+    left: 15px;
+    z-index: -1;
+}
+
+.pics{
+    display: grid;
+    grid-template-columns: repeat(5,100px);
+    grid-template-rows: repeat(2,300px);
+    border: solid 1px rgb(255, 0, 0);
+}
 /**hover**/
 .submit_button:hover{
     cursor: pointer;
