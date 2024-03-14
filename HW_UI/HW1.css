@@ -389,13 +389,27 @@ h4{
     top: 15px;
     left: 15px;
     z-index: -1;
+    width: max-content;
 }
-
+.page2{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center ;
+}
 .pics{
     display: grid;
-    grid-template-columns: repeat(5,100px);
-    grid-template-rows: repeat(2,300px);
-    border: solid 1px rgb(255, 0, 0);
+    grid-template-columns: repeat(5,230px);
+    grid-template-rows: repeat(1,240px);
+    place-content: center;
+    grid-row-gap: 0;
+}
+
+.name{
+    position: relative;
+    top: 100%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 /**hover**/
 .submit_button:hover{
